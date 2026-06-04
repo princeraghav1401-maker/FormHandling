@@ -1,0 +1,53 @@
+
+body{
+    background-color: #1d2e50;
+  height: auto;
+}
+.features-section {
+    padding: 80px 60px;
+    background: #1d2e50;
+    color: white;
+    text-align: center;
+}
+
+.features-title {
+    font-size: 32px;
+    margin-bottom: 40px;
+    color: #38bdf8;
+}
+
+/* grid layout */
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* card */
+.feature-card {
+    background: #111827;
+    padding: 25px;
+    border-radius: 12px;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    background: #1f2937;
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.feature-card p {
+    font-size: 14px;
+    color: #94a3b8;
+}

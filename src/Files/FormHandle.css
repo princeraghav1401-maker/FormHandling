@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(-45deg,
+            #667eea,
+            #764ba2,
+            #6a11cb,
+            #2575fc);
+
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.card {
+    width: 420px;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.2);
+
+    animation: slideUp .8s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.card h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.card p {
+    text-align: center;
+    color: #ddd;
+    margin-bottom: 30px;
+}
+
+.inputBox {
+    margin-bottom: 20px;
+}
+
+.inputBox input {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    outline: none;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    color: white;
+    font-size: 15px;
+
+    transition: .3s;
+}
+
+.inputBox input::placeholder {
+    color: #e5e5e5;
+}
+
+.inputBox input:focus {
+    transform: scale(1.02);
+
+    background:
+        rgba(255, 255, 255, 0.28);
+}
+
+.error {
+    color: #ffb4b4;
+    font-size: 13px;
+    margin-top: 5px;
+    display: block;
+}
+
+.btn {
+    width: 100%;
+    padding: 15px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: white;
+    color: #6a11cb;
+
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+.btn:active {
+    transform: scale(.98);
+}
+
+
+.divider {
+    margin: 20px 0;
+    text-align: center;
+    position: relative;
+}
+
+.divider span {
+    background: #fff;
+    padding: 0 10px;
+    color: #777;
+    font-size: 14px;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ddd;
+    z-index: -1;
+}
+
+.signupBtn {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #141415;
+    background: transparent;
+    color: #2e2e30;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signupBtn:hover {
+    background: #4f46e5;
+    color: white;
+    transform: translateY(-2px);
+}
