@@ -1,4 +1,5 @@
 import React from "react";
+import axios from "axios"; // 1. Axios import kar liya
 import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
@@ -16,37 +17,31 @@ const FormHandle = () => {
 
     const onSubmit = async (data) => {
         try {
-            const response = await fetch(
+            // 2. Fetch ki jagah Axios use kiya
+            const response = await axios.post(
                 "https://backend-api-formhandling-production.up.railway.app/api/login",
                 {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        email: data.email,
-                        password: data.password,
-                    }),
+                    email: data.email,
+                    password: data.password,
+                },
+                {
+                    headers: { "Content-Type": "application/json" }
                 }
             );
 
-            const result = await response.text();
+            // Axios automatically JSON response parse kar leta hai
+            toast.success("Login Successful!");
+            reset();
+            setTimeout(() => { navigate("/home"); }, 1500);
 
-            if (response.ok) {
-                toast.success(result);
-
-                reset();
-
-                setTimeout(() => {
-                    navigate("/home");
-                }, 1500);
-            } else {
-                toast.error(result);
-            }
         } catch (error) {
-            toast.error("Backend connection failed!");
+            // 3. Error handling: Agar server se response na aaye
+            console.error("Error details:", error);
+            toast.error(error.response?.data || "Backend connection failed!");
         }
     };
+
+    // ... (Baki JSX waisa hi rahega)
 
     return (
         <div className="container">
