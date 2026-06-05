@@ -20,7 +20,8 @@ const Signup = () => {
     const onSubmit = async (data) => {
         try {
             const response = await fetch(
-                "http://localhost:8082/api/signup",
+                // Isko likh do  
+                "https://backend-api-formhandling-production.up.railway.app/api/signup",
                 {
                     method: "POST",
                     headers: {

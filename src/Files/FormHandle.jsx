@@ -17,7 +17,7 @@ const FormHandle = () => {
     const onSubmit = async (data) => {
         try {
             const response = await fetch(
-                "http://localhost:8082/api/login",
+                "https://backend-api-formhandling-production.up.railway.app/api/login",
                 {
                     method: "POST",
                     headers: {
@@ -114,7 +114,7 @@ const FormHandle = () => {
                     <button type="submit" className="btn">
                         Login
                     </button>
-                  
+
 
                     <div className="divider">
                         <span>OR</span>
